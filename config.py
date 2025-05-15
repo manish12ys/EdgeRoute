@@ -6,7 +6,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config:
     # Generate a secure random key if not provided in environment
     SECRET_KEY = os.environ.get('SECRET_KEY') or os.urandom(24).hex()
-
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
     # Database configuration
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ENGINE_OPTIONS = {
